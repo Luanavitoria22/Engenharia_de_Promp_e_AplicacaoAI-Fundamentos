@@ -36,8 +36,13 @@ Assistentes virtuais como Google Assistant
 
 ## Prompt Estruturado
 Papel + Objetivo + Contexto + Formato : Agora voce é professor de TI, explique "o que é Machine Learning?" para um iniciante, usando de exemplo a analogia com esportes, utilize 3 a 4 linhas no maximo e gere a resposta em Portugues Brasil de acordo com as regras ABNT.): 
-Como professor, explico: Machine Learning é como treinar um atleta.
-Machine Learning é uma técnica da Inteligência Artificial em que o computador aprende a partir de dados, semelhante a um atleta que melhora seu desempenho com treino contínuo. Assim como no esporte, quanto mais prática e análise de resultados, melhor a performance. Dessa forma, o sistema identifica padrões e toma decisões com base na experiência adquirida.
+Machine Learning é como treinar um atleta: em vez de dar regras fixas, você mostra vários exemplos (treinos) para que ele aprenda padrões e melhore seu desempenho. Com o tempo, o sistema ajusta suas “habilidades” com base nos dados, assim como um esportista evolui com a prática. Dessa forma, ele passa a tomar decisões ou fazer previsões de forma cada vez mais precisa.
+
+**Referências (ABNT):**
+MITCHELL, Tom M. *Machine Learning*. New York: McGraw-Hill, 1997.
+GOODFELLOW, Ian; BENGIO, Yoshua; COURVILLE, Aaron. *Deep Learning*. Cambridge: MIT Press, 2016.
+RUSSELL, Stuart; NORVIG, Peter. *Inteligência Artificial: Uma Abordagem Moderna*. 3. ed. Rio de Janeiro: Elsevier, 2013.
+
 
 Passo 3: Analise Critica
 
