@@ -11,8 +11,8 @@ O objetivo deste repositório é reunir exercícios, práticas guiadas, desafios
 
 A disciplina de Engenharia de Prompt aborda conceitos essenciais sobre:
 
-Construção estratégica de prompts
-Técnicas para melhorar respostas de IA
-Estilos e estruturas de comando
-Prompting avançado
-Aplicações reais em projetos e resolução de problemas
+ ° Construção estratégica de prompts
+ ° Técnicas para melhorar respostas de IA
+ ° Estilos e estruturas de comando
+ ° Prompting avançado
+ ° Aplicações reais em projetos e resolução de problemas
