@@ -1,10 +1,11 @@
 <h2 align="center">Análise de Tokens:</h2>
 
-<img width="1562" height="861" alt="Chatgpt-Eng Prompt" src="https://github.com/user-attachments/assets/d3b19b2f-9464-486e-805d-722cbadb6875" />
+<img width="1153" height="691" alt="Open-Tokenizer" src="https://github.com/user-attachments/assets/44d7ff7a-c65d-49e4-abaf-1dd4fe641f32" />
+
 
 <h2 align="center">Raciocinio CoT(Chain-of-Thought):</h2>
 
-<img width="1562" height="861" alt="Chatgpt-Eng Prompt" src="https://github.com/user-attachments/assets/d3b19b2f-9464-486e-805d-722cbadb6875" /> />
+<img width="1562" height="861" alt="Chatgpt-Eng Prompt" src="https://github.com/user-attachments/assets/d3b19b2f-9464-486e-805d-722cbadb6875" />
 <br>
 <br>
 <div>
