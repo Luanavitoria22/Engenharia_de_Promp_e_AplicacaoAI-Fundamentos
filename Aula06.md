@@ -1,8 +1,9 @@
 ### Nome dos integrantes:
 Luana Vitória da Silva Pereira - RGM: 45621225<br>
 Brenon Rodrigo A. M. Coutinho - RGM: 46011269<br>
-Paola Victoria Matos Mota - RGM: 45029156<br>
 Uriel Oliveira de Queiroz - RGM: 46330054 <br>
+Paola Victoria Matos Mota - RGM: 45029156<br>
+
 
 # Missão Prática: O Laboratorio de Arquitetura
 
