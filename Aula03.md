@@ -10,6 +10,6 @@
 <br>
 <br>
 <div>
- # <p>Conclusão: A forma como os tokens são divididos influencia diretamente a resposta da IA. Quando o prompt é claro, a IA entende melhor o contexto e responde com mais precisão. Já prompts longos ou confusos podem gastar mais tokens e dificultar a interpretação. Por isso, saber usar tokens de forma eficiente é essencial para obter boas respostas.</p>
+ <p><strong>Conclusão: </strong>A forma como os tokens são divididos influencia diretamente a resposta da IA. Quando o prompt é claro, a IA entende melhor o contexto e responde com mais precisão. Já prompts longos ou confusos podem gastar mais tokens e dificultar a interpretação. Por isso, saber usar tokens de forma eficiente é essencial para obter boas respostas.</p>
 </div>
 
