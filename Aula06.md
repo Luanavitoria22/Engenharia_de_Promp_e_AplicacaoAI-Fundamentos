@@ -4,7 +4,7 @@ Brenon Rodrigo A. M. Coutinho - RGM: 46011269<br>
 Paola Victoria Matos Mota - RGM: 45029156<br>
 Uriel Oliveira de Queiroz - RGM: 46330054 <br>
 
-# Missão Prática: O Laboratorio de Arquitetura.
+# Missão Prática: O Laboratorio de Arquitetura
 
 ### 1. Versão Neutra:
 
