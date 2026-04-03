@@ -13,7 +13,7 @@ A disciplina está organizada em quatro unidades, que abordam desde fundamentos 
 
 - 🧩 **Unidade I — De Conversa Passiva a Diálogo Inteligente:** Tornando-se Arquiteto da IA
 - 💻 **Unidade II — IA como Parceira de Código:** Programação Assistida e Automação
-- 🧱 **Unidade III — Low Code, No Code e Vibecode:** A Democratização da Programação com IA
+- 🧱 **Unidade III — Low Code, No Code e Vibecode:** Do Código Tradicional à Democratização de Programação com IA
 - 🤖 **Unidade IV — Criação de Agentes de IA e Ética Aplicada:** Da Inovação Responsável ao Impacto Social
 
 
