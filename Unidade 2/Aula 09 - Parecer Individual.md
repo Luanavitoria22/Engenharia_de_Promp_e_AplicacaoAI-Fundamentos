@@ -27,7 +27,7 @@ A Unidade II apresenta a programação assistida por IA como um novo paradigma n
 ---
 
 ## Considerações Finais
-A programação assistida por IA exige do profissional não apenas domínio técnico, mas também **avaliação crítica e ética**. Saber pedir, testar e validar são competências-chave. A IA amplia capacidades, mas a responsabilidade pelo produto final permanece humana.  
+A programação assistida por IA exige do profissional não apenas domínio técnico, mas também avaliação crítica e ética.Devemos entender as forças e fraquezas da ferramenta e nunca confiar cegamente nela. Saber pedir, testar e validar são competências-chave. A IA amplia capacidades, mas a responsabilidade pelo produto final permanece humana.  
 
 ---
 
