@@ -27,12 +27,13 @@ A Unidade II apresenta a programação assistida por IA como um novo paradigma n
 ---
 
 ## Considerações Finais
-A programação assistida por IA exige do profissional não apenas domínio técnico, mas também avaliação crítica e ética.Devemos entender as forças e fraquezas da ferramenta e nunca confiar cegamente nela. Saber pedir, testar e validar são competências-chave. A IA amplia capacidades, mas a responsabilidade pelo produto final permanece humana.  
+A programação assistida por IA exige do profissional não apenas domínio técnico, mas também avaliação crítica e ética. Devemos entender as forças e fraquezas da ferramenta, mas nunca confiar cegamente nela. 
+Saber pedir, testar e validar são competências-chave. A IA amplia capacidades, mas a responsabilidade pelo produto final permanece humana.  
 
 ---
 
 ## Fontes Consultadas
-- Podcast da Unidade II  
+- Podcast (Unidade II)  
 - Material de apoio: *“IA Como Parceira de Código: Programação Assistida e Automação”*  
-- Experiência prática com GitHub Copilot  
+- Ferramenta: GitHub Copilot  
 
