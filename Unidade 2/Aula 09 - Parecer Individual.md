@@ -1,5 +1,5 @@
-# Parecer Individual 
-# **Tema: Programação Assistida e Automação com IA**
+ 
+# **Parecer Individual: Programação Assistida e Automação com IA**
 
 A Unidade II apresenta a programação assistida por IA como um novo paradigma no desenvolvimento de software, onde a máquina não substitui o programador, mas atua como um **amplificador cognitivo**, liberando-o das tarefas repetitivas(boilerplate) e burocráticas do código, permitindo maior foco em decisões estratégicas e criativas.
 
