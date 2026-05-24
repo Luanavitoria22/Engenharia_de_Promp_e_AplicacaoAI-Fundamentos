@@ -1,6 +1,14 @@
 # Projeto Módulo 3 – Low Code/No Code/Vibecode
 
 ## 📌 Desafio Escolhido
+O projeto teM como objetivo desenvolver um protótipo funcional utilizando
+abordagens Low Code/No Code/Vibecode, explorando ferramentas capazes de
+acelerar o desenvolvimento de aplicações sem exigir programação tradicional em larga
+escala.
+A proposta escolhida pela dupla foi a criação de um sistema de automação de
+cadastro e gerenciamento de usuários com integração de envio automático de e-
+mails, permitindo demonstrar fluxos automatizados, integração entre plataformas e
+construção rápida de interfaces
 
 Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automação de envio de e-mails, integração com API de IA).
 
@@ -18,7 +26,7 @@ Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automa�
 
 ## ⚙️ Plataforma Utilizada
 
-- Nome da plataforma (ex.: Bubble, Make, Pipedream).
+- Bubble (ex.: Bubble, Make, Pipedream).
 
 - Justificativa da escolha: por que essa ferramenta foi selecionada para o desafio?
 
