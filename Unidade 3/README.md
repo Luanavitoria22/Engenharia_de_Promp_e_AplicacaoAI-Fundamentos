@@ -1,7 +1,7 @@
 # Projeto Módulo 3 – Low Code/No Code/Vibecode
 
 ## 📌 Desafio Escolhido
-O projeto teM como objetivo desenvolver um protótipo funcional utilizando
+O projeto tem como objetivo desenvolver um protótipo funcional utilizando
 abordagens Low Code/No Code/Vibecode, explorando ferramentas capazes de
 acelerar o desenvolvimento de aplicações sem exigir programação tradicional em larga
 escala.
@@ -17,6 +17,7 @@ Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automa�
 ## 🖥️ Protótipo
 
 - Prints das telas ou link para a aplicação criada.
+  https://luuhvitoria2018.bubbleapps.io/version-test
 
 - Breve explicação de como o protótipo funciona.
 
@@ -26,10 +27,14 @@ Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automa�
 
 ## ⚙️ Plataforma Utilizada
 
-- Bubble (ex.: Bubble, Make, Pipedream).
+- Bubble
 
-- Justificativa da escolha: por que essa ferramenta foi selecionada para o desafio?
-
+- Justificativa da escolha:
+A plataforma foi escolhida por oferecer:
+Desenvolvimento rápido de prototipos(5 min. no maximo)
+Criação sem código
+Integraçãoo com APIs
+Workflows automatizados 
 ---
 
 ## ✅ Vantagens Identificadas
@@ -38,9 +43,11 @@ Liste pelo menos **3 vantagens** percebidas no uso da abordagem low code/no code
 
 1. Protótipo rápido
 
-2. Integração simples
+2. Interface visual amigável
 
-3. Automação de processos
+3. Banco de dados integrado
+
+4. Responsividade simplificada
 
 ---
 
@@ -48,11 +55,13 @@ Liste pelo menos **3 vantagens** percebidas no uso da abordagem low code/no code
 
 Liste pelo menos **3 limitações** percebidas:
 
-1. Customização limitada
+1. Dependencia da ferramenta
 
-2. Dependência da plataforma
+2. Customização limitada (Ex:limitações de exportação)
 
-3. Risco de lock-in tecnológico
+3. Recursos avançados pagos 
+
+4. Risco de lock-in tecnológico
 
 ---
 
