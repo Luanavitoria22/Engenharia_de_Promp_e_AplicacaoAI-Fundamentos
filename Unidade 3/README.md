@@ -5,10 +5,7 @@ O projeto tem como objetivo desenvolver um protótipo funcional utilizando
 abordagens Low Code/No Code/Vibecode, explorando ferramentas capazes de
 acelerar o desenvolvimento de aplicações sem exigir programação tradicional em larga
 escala.
-A proposta escolhida pela dupla foi a criação de um sistema de automação de
-cadastro e gerenciamento de usuários com integração de envio automático de e-
-mails, permitindo demonstrar fluxos automatizados, integração entre plataformas e
-construção rápida de interfaces
+A proposta escolhida pela dupla foi a criação de uma plataforma web de descoberta e gerenciamento de eventos tech.  A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, que centraliza como conferências, workshops, hackathons e meetups em um único lugar — com foco em descoberta, inscrição e acompanhamento de participação.
 
 Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automação de envio de e-mails, integração com API de IA).
 
@@ -20,7 +17,11 @@ Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automa�
   https://luuhvitoria2018.bubbleapps.io/version-test
 
 - Breve explicação de como o protótipo funciona.
-
+ protótipo desenvolvido permite:
+• Visualização detalhada do certificado (nome, evento...)
+• 
+• 
+• 
 > Coloque os arquivos de imagem ou PDF na pasta `/docs`.
 
 ---
@@ -30,11 +31,13 @@ Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automa�
 - Bubble
 
 - Justificativa da escolha:
+- 
 A plataforma foi escolhida por oferecer:
-Desenvolvimento rápido de prototipos(5 min. no maximo)
-Criação sem código
-Integraçãoo com APIs
-Workflows automatizados 
+
+• Desenvolvimento rápido de prototipos(5 min. no maximo)
+• Criação sem código
+• Integraçãoo com APIs
+• Workflows automatizados 
 ---
 
 ## ✅ Vantagens Identificadas
@@ -68,7 +71,9 @@ Liste pelo menos **3 limitações** percebidas:
 ## 📚 Reflexão Crítica
 
 Explique como o grupo lidou com as limitações e quais soluções criativas foram propostas para contorná-las.
+Mesmo diante das limitações encontradas, conseguimos desenvolver um protótipo funcional, moderno e intuitivo. As soluções criativas adotadas permitiram contornar dificuldades técnicas sem comprometer os principais objetivos do projeto.
 
+A utilização do Bubble demonstrou que plataformas no-code podem acelerar significativamente o desenvolvimento de aplicações, principalmente em projetos de prototipagem e validação de ideias.
 ---
 
 ## 👥 Colaboração
