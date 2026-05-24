@@ -17,7 +17,8 @@ Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automa�
   https://luuhvitoria2018.bubbleapps.io/version-test
 
 - Breve explicação de como o protótipo funciona.
- protótipo desenvolvido permite:
+Protótipo desenvolvido permite:
+
 • Visualização detalhada do certificado (nome, evento...)
 • 
 • 
@@ -31,13 +32,14 @@ Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automa�
 - Bubble
 
 - Justificativa da escolha:
-- 
+  
 A plataforma foi escolhida por oferecer:
 
 • Desenvolvimento rápido de prototipos(5 min. no maximo)
 • Criação sem código
 • Integraçãoo com APIs
-• Workflows automatizados 
+• Workflows automatizados
+
 ---
 
 ## ✅ Vantagens Identificadas
@@ -74,6 +76,7 @@ Explique como o grupo lidou com as limitações e quais soluções criativas for
 Mesmo diante das limitações encontradas, conseguimos desenvolver um protótipo funcional, moderno e intuitivo. As soluções criativas adotadas permitiram contornar dificuldades técnicas sem comprometer os principais objetivos do projeto.
 
 A utilização do Bubble demonstrou que plataformas no-code podem acelerar significativamente o desenvolvimento de aplicações, principalmente em projetos de prototipagem e validação de ideias.
+
 ---
 
 ## 👥 Colaboração
