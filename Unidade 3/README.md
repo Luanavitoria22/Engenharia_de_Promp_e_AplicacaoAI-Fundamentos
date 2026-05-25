@@ -5,9 +5,9 @@ O projeto tem como objetivo desenvolver um protótipo funcional utilizando
 abordagens Low Code/No Code/Vibecode, explorando ferramentas capazes de
 acelerar o desenvolvimento de aplicações sem exigir programação tradicional em larga
 escala.
-A proposta escolhida pela dupla foi a criação de uma plataforma web de descoberta e gerenciamento de eventos tech.  A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, que centraliza como conferências, workshops, hackathons e meetups em um único lugar — com foco em descoberta, inscrição e acompanhamento de participação.
+A proposta escolhida pela dupla foi a criação de uma plataforma web de descoberta e gerenciamento de eventos tech.  
+A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, que centraliza como conferências, workshops, hackathons e meetups em um único lugar — com foco em descoberta, inscrição e acompanhamento de participação.
 
-Descreva aqui o desafio proposto pelo grupo (ex.: cadastro de usuários, automação de envio de e-mails, integração com API de IA).
 
 ---
 
@@ -35,10 +35,10 @@ Protótipo desenvolvido permite:
   
 A plataforma foi escolhida por oferecer:
 
-• Desenvolvimento rápido de prototipos(5 min. no maximo)
-• Criação sem código
-• Integraçãoo com APIs
-• Workflows automatizados
+• Desenvolvimento rápido de prototipos(5 min. no maximo);
+• Criação sem código;
+• Integração com APIs;
+• Workflows automatizados;
 
 ---
 
@@ -72,8 +72,15 @@ Liste pelo menos **3 limitações** percebidas:
 
 ## 📚 Reflexão Crítica
 
-Explique como o grupo lidou com as limitações e quais soluções criativas foram propostas para contorná-las.
-Mesmo diante das limitações encontradas, conseguimos desenvolver um protótipo funcional, moderno e intuitivo. As soluções criativas adotadas permitiram contornar dificuldades técnicas sem comprometer os principais objetivos do projeto.
+Mesmo diante das limitações encontradas, conseguimos desenvolver um protótipo funcional, moderno e intuitivo. As soluções adotadas permitiram contornar dificuldades sem comprometer os objetivos do projeto.
+
+1. Adaptação às limitações de customização.
+   - Uso de elementos visuais já disponíveis no Bubble;
+   - Foco nas funcionalidades essenciais do protótipo;
+2. Uso de APIs externas para complementar funcionalidades.
+3. Aprendizado colaborativo.
+   - Divisão das tarefas, pesquisas em videos e documentações;
+   - Testes para identificar erros rapidamente.
 
 A utilização do Bubble demonstrou que plataformas no-code podem acelerar significativamente o desenvolvimento de aplicações, principalmente em projetos de prototipagem e validação de ideias.
 
@@ -83,8 +90,12 @@ A utilização do Bubble demonstrou que plataformas no-code podem acelerar signi
 
 Descreva como o grupo organizou as tarefas e responsabilidades entre os integrantes.
 
-Criação do prompt de inicio para a criação do prototipo inicial
-Organização do repositorio e relatórios
+• Criação do prompt de inicio para a criação do prototipo inicial;
+**• Modelagem do fluxo:** Definições das automações e funcionalidades;
+**• Documentação:** Organização do repositório e relatórios;
+
+
+A colaboração ocorreu nas aulas e pelo compartilhamento do repositório no GitHub. 
 
 ---
 
@@ -105,3 +116,8 @@ Professor(a): Kadidja Valéria
 - Melhorias sugeridas para o protótipo.
 
 - Possíveis evoluções para o Projeto Final da Unidade 3.
+  
+• Integração com inteligencia artificial;
+• Expansão para aplicativo mobile;
+• Login com GitHub; 
+
