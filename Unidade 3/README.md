@@ -92,8 +92,8 @@ A utilização do Bubble demonstrou que plataformas no-code podem acelerar signi
 **A divisão das tarefas foi realizada de forma:**
 
 - Criação do prompt de inicio para a criação do prototipo inicial;
-**- Modelagem do fluxo:** Definições das automações e funcionalidades;
-**- Documentação:** Organização do repositório e relatórios;
+- **Modelagem do fluxo:** Definições das automações e funcionalidades;
+- **Documentação:** Organização do repositório e relatórios;
 
 
 A colaboração ocorreu nas aulas e pelo compartilhamento do repositório no GitHub. 
@@ -127,4 +127,4 @@ Professor(a): Kadidja Valéria
 - Login com GitHub; 
 - Replay de palestras online;
 
-Solução: 
+Solução: https://gemini.google.com/share/56dde6232b24
