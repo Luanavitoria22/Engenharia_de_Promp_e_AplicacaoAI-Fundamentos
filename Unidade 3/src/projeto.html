@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDFEvents 2026 - Portal de Eventos de Tecnologia do DF</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#11131e',
+                            card: '#1b1d2a',
+                            accent: '#00f0ff',
+                            purple: '#7b4eff',
+                            danger: '#f44336',
+                            muted: '#9ca3af',
+                            input: '#222538'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #11131e;
+            color: #ffffff;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #11131e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1b1d2a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2d3047;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="border-b border-gray-800 bg-[#11131e] sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="navigateTo('home')">
+                    <span class="text-brand-accent font-bold text-xl flex items-center">
+                        <i data-lucide="zap" class="mr-2 h-6 w-6"></i>
+                        TechDFEvents 2026
+                    </span>
+                </div>
+
+                <!-- Navigation Tabs -->
+                <nav class="hidden md:flex space-x-8">
+                    <button onclick="navigateTo('home')" id="nav-home" class="text-white hover:text-brand-accent transition font-medium text-sm">Home</button>
+                    <button onclick="navigateTo('eventos')" id="nav-eventos" class="text-brand-muted hover:text-white transition font-medium text-sm">Eventos</button>
+                    <button onclick="navigateTo('palestrantes')" id="nav-palestrantes" class="text-brand-muted hover:text-white transition font-medium text-sm">Palestrantes</button>
+                    <button onclick="navigateTo('meus-eventos')" id="nav-meus-eventos" class="text-brand-muted hover:text-white transition font-medium text-sm relative">
+                        Meus Eventos
+                        <span id="badge-inscritos-nav" class="absolute -top-2 -right-4 bg-brand-accent text-brand-dark text-xs font-bold rounded-full px-1.5 py-0.5 hidden">0</span>
+                    </button>
+                </nav>
+
+                <!-- Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                    <div id="logged-out-header" class="flex items-center space-x-4">
+                        <button onclick="openModal('login')" class="text-white hover:text-brand-accent text-sm font-semibold transition">Entrar</button>
+                        <button onclick="openModal('register')" class="bg-brand-accent text-brand-dark hover:bg-opacity-90 font-bold px-6 py-2 rounded-lg text-sm transition">Cadastrar</button>
+                    </div>
+                    <div id="logged-in-header" class="hidden flex items-center space-x-3">
+                        <div class="flex items-center space-x-2 bg-brand-card px-4 py-2 rounded-lg border border-gray-800">
+                            <i data-lucide="user" class="h-4 w-4 text-brand-accent"></i>
+                            <span id="user-display-name" class="text-white text-sm font-semibold">Lucas R.</span>
+                        </div>
+                        <button onclick="logout()" class="text-brand-danger hover:bg-brand-danger hover:bg-opacity-10 p-2 rounded-lg transition" title="Sair da Conta">
+                            <i data-lucide="log-out" class="h-5 w-5"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN APP WRAPPER -->
+    <main class="flex-grow">
+        
+        <!-- PAGE 1: HOME -->
+        <section id="page-home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <!-- Em Destaque Pill -->
+            <div class="inline-flex items-center space-x-2 bg-brand-card bg-opacity-50 border border-gray-800 rounded-full px-4 py-1.5 mb-6">
+                <i data-lucide="sparkles" class="text-brand-accent h-4 w-4"></i>
+                <span class="text-xs text-brand-muted font-medium">Em destaque · Brasília DF</span>
+            </div>
+
+            <!-- Hero Section Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <!-- Left Banner & Main Highlight Card -->
+                <div class="lg:col-span-2 space-y-6">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+                        Os eventos tech mais aguardados do DF em 2026
+                    </h1>
+                    <p class="text-brand-muted text-base sm:text-lg max-w-2xl">
+                        Descubra conferências, hackathons e workshops imperdíveis curados pela equipe TechDF.
+                    </p>
+
+                    <!-- Main Highlight Event Card -->
+                    <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-800 transition hover:border-gray-700">
+                        <div class="h-64 sm:h-80 w-full overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop" 
+                                 onerror="this.src='https://placehold.co/1200x500/1b1d2a/ffffff?text=Summit+IA+Brasil+2026'" 
+                                 alt="Summit IA Brasil" class="w-full h-full object-cover">
+                            <!-- Badges -->
+                            <div class="absolute bottom-4 left-4 flex flex-wrap gap-2">
+                                <span class="bg-brand-purple text-xs font-bold px-3 py-1 rounded-full text-white">Inteligência Artificial</span>
+                                <span class="bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1 rounded-full">Presencial</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h2 class="text-2xl font-bold text-white">Summit IA Brasil 2026</h2>
+                            <p class="text-brand-muted text-sm">
+                                Keynotes internacionais, painéis de especialistas, área de networking e feira de startups focada na revolução cognitiva do país.
+                            </p>
+                            <div class="flex flex-wrap gap-4 text-sm text-brand-muted">
+                                <div class="flex items-center space-x-1.5">
+                                    <i data-lucide="calendar" class="h-4 w-4 text-brand-accent"></i>
+                                    <span>15 de Junho, 2026</span>
+                                </div>
+                                <div class="flex items-center space-x-1.5">
+                                    <i data-lucide="map-pin" class="h-4 w-4 text-brand-accent"></i>
+                                    <span>São Paulo, SP (Parceria Regional DF)</span>
+                                </div>
+                            </div>
+                            <button id="btn-subscribe-highlight" onclick="subscribeToEvent(0)" class="w-full bg-brand-accent hover:bg-opacity-90 text-brand-dark font-bold py-3.5 px-6 rounded-xl text-center transition flex items-center justify-center space-x-2">
+                                <span>Inscrever-se agora</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar Stats & Cards -->
+                <div class="space-y-6">
+                    <!-- Stat 1: Confirmados -->
+                    <div class="bg-brand-card p-6 rounded-2xl border border-gray-800 flex flex-col justify-between h-36">
+                        <span class="text-brand-accent text-4xl font-extrabold" id="stats-eventos-count">120+</span>
+                        <span class="text-sm text-brand-muted font-semibold mt-2">Eventos confirmados em 2026</span>
+                    </div>
+
+                    <!-- Stat 2: Palestrantes -->
+                    <div class="bg-brand-card p-6 rounded-2xl border border-gray-800 flex flex-col justify-between h-36">
+                        <span class="text-brand-purple text-4xl font-extrabold">45</span>
+                        <span class="text-sm text-brand-muted font-semibold mt-2">Palestrantes em destaque</span>
+                    </div>
+
+                    <!-- Promo Hack Card -->
+                    <div class="bg-brand-purple bg-opacity-95 p-6 rounded-2xl text-white space-y-4 shadow-lg flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-extrabold">Hack DF 2026</h3>
+                            <p class="text-xs text-purple-100 mt-2 leading-relaxed">
+                                Maior hackathon do Centro-Oeste — inscrições abertas até 28 Fev. Desenvolva soluções para impacto real no distrito federal.
+                            </p>
+                        </div>
+                        <button onclick="navigateTo('eventos')" class="text-white hover:underline text-sm font-semibold flex items-center mt-4">
+                            Ver detalhes <i data-lucide="chevron-right" class="h-4 w-4 ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: EXPLORE EVENTS -->
+        <section id="page-eventos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden">
+            <!-- Header Title -->
+            <div class="flex items-center space-x-2 mb-2">
+                <i data-lucide="folder" class="text-brand-accent h-4 w-4"></i>
+                <span class="text-xs text-brand-accent font-semibold uppercase tracking-wide">Catálogo de eventos · Distrito Federal</span>
+            </div>
+            <h1 class="text-3xl font-extrabold tracking-tight mb-2">Explore todos os eventos tech do DF</h1>
+            <p class="text-brand-muted text-sm max-w-3xl mb-8">
+                Filtre por categoria, formato, tipo de evento e datas para descobrir conferências, workshops, hackathons e meetups que acontecerão perto de você em 2026.
+            </p>
+
+            <!-- Filters Section -->
+            <div class="bg-brand-card p-6 rounded-2xl border border-gray-800 mb-8 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-sm font-semibold text-white tracking-wider uppercase">Filtros Avançados</h3>
+                    <button onclick="clearFilters()" class="text-brand-muted hover:text-white text-xs transition flex items-center">
+                        <i data-lucide="rotate-ccw" class="h-3 w-3 mr-1"></i> Limpar todos
+                    </button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <!-- Filter: Category -->
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Categoria</label>
+                        <select id="filter-category" onchange="applyFilters()" class="w-full bg-[#11131e] border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                            <option value="all">Todas as categorias</option>
+                            <option value="ia">Inteligência Artificial</option>
+                            <option value="cloud">Cloud Computing</option>
+                            <option value="cyber">Cibersegurança</option>
+                            <option value="design">Design UX/UI</option>
+                        </select>
+                    </div>
+
+                    <!-- Filter: Format -->
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Formato</label>
+                        <select id="filter-format" onchange="applyFilters()" class="w-full bg-[#11131e] border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                            <option value="all">Todos os formatos</option>
+                            <option value="presencial">Presencial</option>
+                            <option value="online">On-line</option>
+                        </select>
+                    </div>
+
+                    <!-- Filter: Type -->
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Tipo de Evento</label>
+                        <select id="filter-type" onchange="applyFilters()" class="w-full bg-[#11131e] border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                            <option value="all">Todos os tipos</option>
+                            <option value="workshop">Workshop / Oficina</option>
+                            <option value="conferencia">Conferência / Cúpula</option>
+                            <option value="bootcamp">Bootcamp Intensivo</option>
+                        </select>
+                    </div>
+
+                    <!-- Filter: Start Date -->
+                    <div>
+                        <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">A partir de</label>
+                        <input type="date" id="filter-date" onchange="applyFilters()" value="2026-01-01" class="w-full bg-[#11131e] border border-gray-800 rounded-lg py-2 px-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                    </div>
+                </div>
+
+                <!-- Selected Badges Indicators -->
+                <div id="filter-indicators" class="flex flex-wrap gap-2 pt-2">
+                    <!-- Dynamic Badges Inserted Here -->
+                </div>
+            </div>
+
+            <!-- List Subtitle & Sort -->
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-xl font-bold">Próximos eventos</h2>
+                    <p class="text-xs text-brand-muted">Resultados ordenados pela data mais próxima</p>
+                </div>
+                <div class="text-xs text-brand-muted flex items-center space-x-1">
+                    <i data-lucide="arrow-down-up" class="h-3 w-3"></i>
+                    <span>Exibindo de forma integrada</span>
+                </div>
+            </div>
+
+            <!-- Events Grid -->
+            <div id="events-grid-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Dynamically Rendered Event Cards -->
+            </div>
+        </section>
+
+        <!-- PAGE 3: SPEAKERS DIRECTORY -->
+        <section id="page-palestrantes" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden">
+            <!-- Header Title -->
+            <h1 class="text-3xl font-extrabold tracking-tight mb-2">Conheça as mentes por trás dos maiores eventos tech do Distrito Federal</h1>
+            <p class="text-brand-muted text-sm max-w-3xl mb-6">
+                Engenheiros, fundadores, pesquisadores e criadores compartilhando bastidores, código e visão de futuro nas conferências, workshops e hackathons de Brasília.
+            </p>
+
+            <!-- Stats Bar -->
+            <div class="flex flex-wrap gap-4 mb-8">
+                <div class="bg-brand-card px-4 py-2 rounded-full border border-gray-800 flex items-center space-x-2 text-xs font-semibold text-white">
+                    <i data-lucide="mic" class="h-4 w-4 text-brand-accent"></i>
+                    <span>128 palestrantes</span>
+                </div>
+                <div class="bg-brand-card px-4 py-2 rounded-full border border-gray-800 flex items-center space-x-2 text-xs font-semibold text-white">
+                    <i data-lucide="calendar" class="h-4 w-4 text-brand-purple"></i>
+                    <span>47 eventos em 2026</span>
+                </div>
+                <div class="bg-brand-card px-4 py-2 rounded-full border border-gray-800 flex items-center space-x-2 text-xs font-semibold text-white">
+                    <i data-lucide="brain" class="h-4 w-4 text-green-400"></i>
+                    <span>22 áreas de expertise</span>
+                </div>
+            </div>
+
+            <!-- Speaker Search & Filters -->
+            <div class="bg-brand-card p-6 rounded-2xl border border-gray-800 mb-8 space-y-4">
+                <label class="block text-xs font-semibold text-brand-muted uppercase">Buscar palestrante</label>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-grow relative">
+                        <input type="text" id="speaker-search-input" placeholder="Buscar por nome ou área (ex: Inteligência Artificial, Cloud, UX)..." class="w-full bg-[#11131e] border border-gray-800 rounded-lg py-3 pl-10 pr-4 text-sm text-white placeholder-brand-muted focus:outline-none focus:border-brand-accent">
+                        <i data-lucide="search" class="absolute left-3.5 top-3.5 h-4.5 w-4.5 text-brand-muted"></i>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button onclick="searchSpeakers()" class="bg-brand-purple hover:bg-opacity-90 text-white font-bold px-6 py-3 rounded-lg text-sm transition">Buscar</button>
+                        <button onclick="resetSpeakerSearch()" class="bg-[#11131e] border border-gray-800 hover:border-gray-700 text-brand-muted px-6 py-3 rounded-lg text-sm transition">Limpar</button>
+                    </div>
+                </div>
+
+                <!-- Popular Categories Pills -->
+                <div class="pt-2">
+                    <span class="text-xs text-brand-muted mr-3">Áreas populares:</span>
+                    <div class="inline-flex flex-wrap gap-2">
+                        <button onclick="filterSpeakerByTag('Inteligência Artificial')" class="bg-[#11131e] hover:border-brand-accent border border-gray-800 text-brand-muted hover:text-white text-xs px-3 py-1 rounded-full transition">Inteligência Artificial</button>
+                        <button onclick="filterSpeakerByTag('Cloud')" class="bg-[#11131e] hover:border-brand-accent border border-gray-800 text-brand-muted hover:text-white text-xs px-3 py-1 rounded-full transition">Cloud</button>
+                        <button onclick="filterSpeakerByTag('Cybersegurança')" class="bg-[#11131e] hover:border-brand-accent border border-gray-800 text-brand-muted hover:text-white text-xs px-3 py-1 rounded-full transition">Cybersegurança</button>
+                        <button onclick="filterSpeakerByTag('Design UX/UI')" class="bg-[#11131e] hover:border-brand-accent border border-gray-800 text-brand-muted hover:text-white text-xs px-3 py-1 rounded-full transition">Design UX/UI</button>
+                        <button onclick="filterSpeakerByTag('Robótica')" class="bg-[#11131e] hover:border-brand-accent border border-gray-800 text-brand-muted hover:text-white text-xs px-3 py-1 rounded-full transition">Robótica</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speakers Section Header -->
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold">Diretório de Palestrantes</h2>
+                <span class="text-xs text-brand-muted" id="speakers-count-label">Mostrando 4 perfis</span>
+            </div>
+
+            <!-- Speakers Grid -->
+            <div id="speakers-grid-container" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Speakers Rendered Dynamically -->
+            </div>
+        </section>
+
+        <!-- PAGE 4: MY EVENTS & CERTIFICATES -->
+        <section id="page-meus-eventos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 hidden">
+            <!-- Header Section with Profile Details -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-6 border-b border-gray-800">
+                <div>
+                    <h1 class="text-3xl font-extrabold tracking-tight mb-2">Meus Eventos</h1>
+                    <p class="text-brand-muted text-sm">
+                        Acompanhe seus próximos compromissos tech no DF, gerencie inscrições e acesse certificados de eventos passados.
+                    </p>
+                </div>
+                <!-- Stat Badges (Telas 5 & 6 Style) -->
+                <div class="flex space-x-4">
+                    <div class="bg-brand-card border border-gray-800 px-6 py-3 rounded-xl text-center min-w-[100px]">
+                        <span class="text-brand-accent font-bold text-lg block" id="my-stats-upcoming">0</span>
+                        <span class="text-[10px] text-brand-muted uppercase font-bold tracking-wider">Próximos</span>
+                    </div>
+                    <div class="bg-brand-card border border-gray-800 px-6 py-3 rounded-xl text-center min-w-[100px]">
+                        <span class="text-brand-purple font-bold text-lg block" id="my-stats-conuss">11</span>
+                        <span class="text-[10px] text-brand-muted uppercase font-bold tracking-wider">ConUSs</span>
+                    </div>
+                    <div class="bg-brand-card border border-gray-800 px-6 py-3 rounded-xl text-center min-w-[100px]">
+                        <span class="text-brand-purple font-bold text-lg block" id="my-stats-certs">8</span>
+                        <span class="text-[10px] text-brand-muted uppercase font-bold tracking-wider">Certificados</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Registered Events Title & Counter -->
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center space-x-2">
+                    <div class="h-2 w-2 rounded-full bg-brand-accent animate-pulse"></div>
+                    <h2 class="text-xl font-bold">Próximos Eventos</h2>
+                    <span id="badge-inscricoes-ativas" class="bg-brand-accent bg-opacity-25 text-brand-accent text-xs font-bold px-2 py-0.5 rounded-full">0 inscrições ativas</span>
+                </div>
+                <button onclick="navigateTo('eventos')" class="text-brand-accent hover:underline text-xs font-semibold flex items-center">
+                    Explorar mais eventos <i data-lucide="arrow-right" class="h-3 w-3 ml-1"></i>
+                </button>
+            </div>
+
+            <!-- Active Subscriptions Container -->
+            <div id="active-subscriptions-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <!-- Active subscriptions cards rendered dynamically -->
+            </div>
+
+            <!-- Section 2: Passed Events & Certificados -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="h-2 w-2 rounded-full bg-brand-muted"></div>
+                        <h2 class="text-xl font-bold">Eventos Passados</h2>
+                        <span class="bg-[#1b1d2a] text-brand-muted text-xs font-bold px-2.5 py-0.5 rounded-full">11 eventos</span>
+                    </div>
+                </div>
+
+                <!-- Past Events Grid with Certs download button -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Past Event 1 -->
+                    <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-800 p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-brand-card border border-gray-800 text-[10px] text-brand-muted font-bold px-2.5 py-1 rounded">DEZEMBRO 2025</span>
+                                <span class="text-green-400 text-xs font-semibold flex items-center">Concluído <i data-lucide="check-circle-2" class="h-3.5 w-3.5 ml-1"></i></span>
+                            </div>
+                            <h3 class="text-md font-bold mb-1">Workshop DevOps Distrito Federal</h3>
+                            <p class="text-xs text-brand-muted mb-4">Automação de CI/CD, Kubernetes local e monitoramento avançado com Grafana.</p>
+                        </div>
+                        <button onclick="generateCertificate('Lucas Ribeiro', 'Workshop DevOps Distrito Federal')" class="w-full bg-[#11131e] hover:bg-brand-card border border-gray-800 hover:border-brand-accent text-brand-accent text-xs font-bold py-2.5 rounded-lg transition flex items-center justify-center space-x-1.5">
+                            <i data-lucide="award" class="h-3.5 w-3.5"></i>
+                            <span>Gerar Certificado</span>
+                        </button>
+                    </div>
+
+                    <!-- Past Event 2 -->
+                    <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-800 p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-brand-card border border-gray-800 text-[10px] text-brand-muted font-bold px-2.5 py-1 rounded">OUTUBRO 2025</span>
+                                <span class="text-green-400 text-xs font-semibold flex items-center">Concluído <i data-lucide="check-circle-2" class="h-3.5 w-3.5 ml-1"></i></span>
+                            </div>
+                            <h3 class="text-md font-bold mb-1">Meetup Segurança de Nuvem DF</h3>
+                            <p class="text-xs text-brand-muted mb-4">Técnicas essenciais de hardening em ambientes AWS e Google Cloud.</p>
+                        </div>
+                        <button onclick="generateCertificate('Lucas Ribeiro', 'Meetup Segurança de Nuvem DF')" class="w-full bg-[#11131e] hover:bg-brand-card border border-gray-800 hover:border-brand-accent text-brand-accent text-xs font-bold py-2.5 rounded-lg transition flex items-center justify-center space-x-1.5">
+                            <i data-lucide="award" class="h-3.5 w-3.5"></i>
+                            <span>Gerar Certificado</span>
+                        </button>
+                    </div>
+
+                    <!-- Past Event 3 -->
+                    <div class="bg-brand-card rounded-2xl overflow-hidden border border-gray-800 p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-brand-card border border-gray-800 text-[10px] text-brand-muted font-bold px-2.5 py-1 rounded">AGOSTO 2025</span>
+                                <span class="text-green-400 text-xs font-semibold flex items-center">Concluído <i data-lucide="check-circle-2" class="h-3.5 w-3.5 ml-1"></i></span>
+                            </div>
+                            <h3 class="text-md font-bold mb-1">Imersão UX para Governo Digital</h3>
+                            <p class="text-xs text-brand-muted mb-4">Acessibilidade, heurísticas e simplificação de portais federais e locais.</p>
+                        </div>
+                        <button onclick="generateCertificate('Lucas Ribeiro', 'Imersão UX para Governo Digital')" class="w-full bg-[#11131e] hover:bg-brand-card border border-gray-800 hover:border-brand-accent text-brand-accent text-xs font-bold py-2.5 rounded-lg transition flex items-center justify-center space-x-1.5">
+                            <i data-lucide="award" class="h-3.5 w-3.5"></i>
+                            <span>Gerar Certificado</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-card border-t border-gray-800 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left sm:flex sm:items-center sm:justify-between text-brand-muted text-xs">
+            <p>© 2026 TechDFEvents. Desenvolvido para impulsionar a comunidade de TI do Distrito Federal.</p>
+            <div class="flex justify-center space-x-6 mt-4 sm:mt-0">
+                <a href="#" class="hover:text-white transition">Privacidade</a>
+                <a href="#" class="hover:text-white transition">Termos</a>
+                <a href="#" class="hover:text-white transition">Suporte</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MODAL: REGISTER / AUTH (TELA 2) -->
+    <div id="modal-register" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 px-4 hidden">
+        <div class="bg-brand-card rounded-2xl w-full max-w-md p-8 border border-gray-800 relative shadow-2xl">
+            <!-- Header -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-white mb-2">Crie sua conta TechDF</h2>
+                <p class="text-xs text-brand-muted leading-relaxed">
+                    Acesse eventos exclusivos, certificados e palestras no Distrito Federal.
+                </p>
+            </div>
+
+            <!-- Form -->
+            <form onsubmit="handleRegistration(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Nome completo</label>
+                    <input type="text" id="register-name" required value="Lucas Ribeiro" class="w-full bg-brand-input border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent placeholder-brand-muted">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Email</label>
+                    <input type="email" id="register-email" required value="voce@email.com" class="w-full bg-brand-input border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent placeholder-brand-muted">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Senha</label>
+                    <input type="password" id="register-password" required placeholder="Mínimo 8 caracteres" class="w-full bg-brand-input border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent placeholder-brand-muted">
+                </div>
+
+                <!-- Action Button -->
+                <button type="submit" class="w-full bg-brand-accent hover:bg-opacity-90 text-brand-dark font-extrabold py-3.5 px-4 rounded-xl text-sm transition mt-6">
+                    Criar conta
+                </button>
+            </form>
+
+            <!-- Links -->
+            <div class="text-center mt-6 space-y-3">
+                <button onclick="toggleAuthModal()" class="text-brand-accent hover:underline text-xs font-semibold block w-full text-center">Já tem conta? Entre aqui</button>
+                <button onclick="closeModal('register')" class="text-brand-muted hover:text-white text-xs font-semibold block w-full text-center">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: LOGIN -->
+    <div id="modal-login" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 px-4 hidden">
+        <div class="bg-brand-card rounded-2xl w-full max-w-md p-8 border border-gray-800 relative shadow-2xl">
+            <!-- Header -->
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-white mb-2">Acesse sua Conta</h2>
+                <p class="text-xs text-brand-muted">Conecte-se para gerenciar seus ingressos e certificados.</p>
+            </div>
+
+            <!-- Form -->
+            <form onsubmit="handleLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Email</label>
+                    <input type="email" id="login-email" required value="voce@email.com" class="w-full bg-brand-input border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-brand-muted mb-1.5 uppercase">Senha</label>
+                    <input type="password" id="login-password" required value="12345678" class="w-full bg-brand-input border border-gray-800 rounded-lg py-2.5 px-3 text-sm text-white focus:outline-none focus:border-brand-accent">
+                </div>
+
+                <!-- Action Button -->
+                <button type="submit" class="w-full bg-brand-accent hover:bg-opacity-90 text-brand-dark font-extrabold py-3.5 px-4 rounded-xl text-sm transition mt-6">
+                    Acessar painel
+                </button>
+            </form>
+
+            <!-- Links -->
+            <div class="text-center mt-6 space-y-3">
+                <button onclick="toggleAuthModal()" class="text-brand-accent hover:underline text-xs font-semibold block w-full text-center">Não tem uma conta? Cadastre-se</button>
+                <button onclick="closeModal('login')" class="text-brand-muted hover:text-white text-xs font-semibold block w-full text-center">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: CANCEL SUBSCRIPTION CONFIRMATION (TELA 3) -->
+    <div id="modal-cancel-confirm" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 px-4 hidden">
+        <div class="bg-brand-card rounded-2xl w-full max-w-md p-8 border border-gray-800 relative shadow-2xl">
+            <!-- Error Icon Block -->
+            <div class="flex justify-start mb-6">
+                <div class="h-14 w-14 bg-red-500 bg-opacity-20 rounded-full flex items-center justify-center text-brand-danger">
+                    <i data-lucide="alert-triangle" class="h-8 w-8"></i>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <h2 class="text-xl font-bold text-white mb-3">Cancelar?</h2>
+            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+                Tem certeza que deseja cancelar sua inscrição no <span id="cancel-event-title" class="text-white font-semibold"></span>? Essa ação não pode ser desfeita e sua vaga será liberada.
+            </p>
+
+            <!-- Choice Actions -->
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="closeModal('cancel-confirm')" class="bg-brand-input hover:bg-opacity-80 text-white font-bold py-3.5 rounded-lg text-xs transition flex items-center justify-center">
+                    Manter <i data-lucide="plus" class="h-3.5 w-3.5 ml-1"></i>
+                </button>
+                <button onclick="confirmCancelSubscription()" class="bg-brand-danger hover:bg-opacity-90 text-white font-bold py-3.5 rounded-lg text-xs transition">
+                    Sim, cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: TOAST DIALOG (REPLACES SYSTEM ALERTS) -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3"></div>
+
+    <!-- MODAL: CERTIFICATE DIALOG -->
+    <div id="modal-certificate" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 px-4 hidden">
+        <div class="bg-brand-card border border-gray-800 p-8 rounded-2xl w-full max-w-2xl relative shadow-2xl">
+            <button onclick="closeModal('certificate')" class="absolute top-4 right-4 text-brand-muted hover:text-white transition">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+            
+            <!-- Beautiful Certificate Layout -->
+            <div class="border-4 border-double border-brand-accent p-6 rounded-lg text-center space-y-6 bg-brand-dark">
+                <div class="flex justify-center">
+                    <i data-lucide="award" class="h-16 w-16 text-brand-accent"></i>
+                </div>
+                <span class="text-[10px] text-brand-accent tracking-widest font-extrabold uppercase">Certificado de Conclusão</span>
+                <h3 class="text-xs text-brand-muted">Certificamos com distinção acadêmica que</h3>
+                <h1 class="text-2xl font-extrabold text-white underline decoration-brand-accent" id="cert-user-name">Lucas Ribeiro</h1>
+                <p class="text-xs text-brand-muted max-w-lg mx-auto leading-relaxed">
+                    Completou com êxito todas as etapas avaliativas e presenciais do evento de tecnologia avançada:
+                </p>
+                <h2 class="text-lg font-bold text-brand-purple" id="cert-event-title">Nome do Evento</h2>
+                <div class="border-t border-gray-800 pt-6 flex justify-between items-center text-[10px] text-brand-muted px-4">
+                    <span>Emissão: 2026 · Brasilia - DF</span>
+                    <span class="font-mono text-brand-accent">Cod: #DF-2026-X8</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- DATA & LOGIC SCRIPT -->
+    <script>
+        // Core APP State
+        const state = {
+            currentUser: {
+                loggedIn: true,
+                name: "Lucas R."
+            },
+            events: [
+                {
+                    id: 0,
+                    title: "Summit IA Brasil 2026",
+                    category: "ia",
+                    categoryLabel: "Inteligência Artificial",
+                    format: "presencial",
+                    formatLabel: "Presencial",
+                    type: "conferencia",
+                    typeLabel: "Conferência",
+                    dateStr: "15/06/2026",
+                    dateValue: "2026-06-15",
+                    location: "São Paulo, SP",
+                    description: "Keynotes internacionais, painéis de especialistas, área de networking e feira de startups focada na revolução cognitiva do país.",
+                    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop"
+                },
+                {
+                    id: 1,
+                    title: "Cúpula IA Brasil 2026",
+                    category: "ia",
+                    categoryLabel: "Inteligência Artificial",
+                    format: "presencial",
+                    formatLabel: "Presencial",
+                    type: "conferencia",
+                    typeLabel: "Cúpula",
+                    dateStr: "15/08/2026",
+                    dateValue: "2026-08-15",
+                    location: "São Paulo, SP",
+                    description: "As mentes mais brilhantes reunidas no maior evento integrativo de IA do Centro-Oeste brasileiro.",
+                    img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=600&auto=format&fit=crop"
+                },
+                {
+                    id: 2,
+                    title: "IA na Prática: Workshop prático",
+                    category: "ia",
+                    categoryLabel: "Inteligência Artificial",
+                    format: "presencial",
+                    formatLabel: "Presencial",
+                    type: "workshop",
+                    typeLabel: "Oficina",
+                    dateStr: "20/06/2026",
+                    dateValue: "2026-06-20",
+                    location: "Rio de Janeiro, RJ",
+                    description: "Coloque a mão na massa! Treinamento prático integrando LLMs a sistemas de dados corporativos de forma segura.",
+                    img: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop"
+                },
+                {
+                    id: 3,
+                    title: "Curso Intensivo Online de Aprendizado de Máquina",
+                    category: "ia",
+                    categoryLabel: "Inteligência Artificial",
+                    format: "online",
+                    formatLabel: "On-line",
+                    type: "bootcamp",
+                    typeLabel: "Bootcamp",
+                    dateStr: "07/04/2026",
+                    dateValue: "2026-04-07",
+                    location: "On-line",
+                    description: "Domine algoritmos de ML de ponta a ponta com aulas online em tempo real e mentorias em grupo especializadas.",
+                    img: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600&auto=format&fit=crop"
+                },
+                {
+                    id: 4,
+                    title: "Cloud Summit Distrito Federal",
+                    category: "cloud",
+                    categoryLabel: "Cloud Computing",
+                    format: "presencial",
+                    formatLabel: "Presencial",
+                    type: "conferencia",
+                    typeLabel: "Conferência",
+                    dateStr: "22/07/2026",
+                    dateValue: "2026-07-22",
+                    location: "Brasília, DF",
+                    description: "O principal ponto de encontro para engenheiros de infraestrutura, arquitetos de nuvem e entusiastas de Kubernetes.",
+                    img: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=600&auto=format&fit=crop"
+                },
+                {
+                    id: 5,
+                    title: "Hackathon DF Resiliente",
+                    category: "cyber",
+                    categoryLabel: "Cibersegurança",
+                    format: "presencial",
+                    formatLabel: "Presencial",
+                    type: "workshop",
+                    typeLabel: "Hackathon",
+                    dateStr: "11/09/2026",
+                    dateValue: "2026-09-11",
+                    location: "Brasília, DF",
+                    description: "Competição intensa focada em segurança cibernética e criação de mecanismos de defesa digital para serviços públicos.",
+                    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop"
+                }
+            ],
+            speakers: [
+                {
+                    name: "Isabela Fontana",
+                    area: "Inteligência Artificial",
+                    desc: "Isabela Fontana é pesquisadora de IA com mais de 10 anos de experiência em NLP e visão computacional, tendo publicado diversos artigos no cenário nacional e global.",
+                    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop"
+                },
+                {
+                    name: "Rodrigo Nakashima",
+                    area: "Cybersegurança",
+                    desc: "Rodrigo Nakashima é especialista em cibersegurança ofensiva e defensiva, com vasta experiência em red team de grandes instituições bancárias.",
+                    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop"
+                },
+                {
+                    name: "Priya Venkataraman",
+                    area: "Cloud",
+                    desc: "Priya Venkataraman é arquiteta de soluções cloud certificada nas principais plataformas de mercado, sendo referência nacional em migração de sistemas complexos.",
+                    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop"
+                },
+                {
+                    name: "Marcus Edelweiss",
+                    area: "Design UX/UI",
+                    desc: "Marcus Edelweiss é designer de produto e UX researcher com trajetória marcada por design estratégico em startups unicórnio e consultorias renomadas.",
+                    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=300&auto=format&fit=crop"
+                }
+            ],
+            subscriptions: [3], // Lucas R. starts subscribed to ID 3 as shown in (tela 5)
+            pendingCancelId: null
+        };
+
+        // On Load initialization
+        window.onload = function() {
+            lucide.createIcons();
+            applyFilters();
+            renderSpeakers();
+            updateUIState();
+            setupCountdownTimers();
+        };
+
+        // Navigation Function
+        function navigateTo(pageId) {
+            // Hide all pages
+            document.getElementById('page-home').classList.add('hidden');
+            document.getElementById('page-eventos').classList.add('hidden');
+            document.getElementById('page-palestrantes').classList.add('hidden');
+            document.getElementById('page-meus-eventos').classList.add('hidden');
+
+            // Show target page
+            document.getElementById(`page-${pageId}`).classList.remove('hidden');
+
+            // Reset navigation indicators
+            const tabs = ['home', 'eventos', 'palestrantes', 'meus-eventos'];
+            tabs.forEach(tab => {
+                const btn = document.getElementById(`nav-${tab}`);
+                if (tab === pageId) {
+                    btn.classList.remove('text-brand-muted');
+                    btn.classList.add('text-brand-accent');
+                } else {
+                    btn.classList.remove('text-brand-accent');
+                    btn.classList.add('text-brand-muted');
+                    btn.classList.add('hover:text-white');
+                }
+            });
+
+            // Re-render sub components if navigating to Meus Eventos
+            if (pageId === 'meus-eventos') {
+                renderSubscriptions();
+            }
+        }
+
+        // Render events catalog with active filters (Page 2)
+        function applyFilters() {
+            const catFilter = document.getElementById('filter-category').value;
+            const formatFilter = document.getElementById('filter-format').value;
+            const typeFilter = document.getElementById('filter-type').value;
+            const minDate = document.getElementById('filter-date').value;
+
+            // Render filter pills
+            const indicatorsContainer = document.getElementById('filter-indicators');
+            indicatorsContainer.innerHTML = '';
+
+            const createIndicatorPill = (label, filterId, value) => {
+                const pill = document.createElement('span');
+                pill.className = 'bg-brand-card hover:bg-opacity-80 border border-gray-800 text-brand-accent text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-1 cursor-pointer';
+                pill.innerHTML = `
+                    <span>${label}: ${value}</span>
+                    <i data-lucide="x" class="h-3 w-3 ml-1 text-brand-muted" onclick="resetSingleFilter('${filterId}')"></i>
+                `;
+                indicatorsContainer.appendChild(pill);
+            };
+
+            if (catFilter !== 'all') {
+                const map = { ia: "Inteligência Artificial", cloud: "Cloud Computing", cyber: "Cibersegurança", design: "Design UX/UI" };
+                createIndicatorPill("Categoria", 'filter-category', map[catFilter]);
+            }
+            if (formatFilter !== 'all') {
+                createIndicatorPill("Formato", 'filter-format', formatFilter === 'presencial' ? 'Presencial' : 'On-line');
+            }
+            if (typeFilter !== 'all') {
+                const map = { workshop: "Workshop / Oficina", conferencia: "Conferência", bootcamp: "Bootcamp Intensivo" };
+                createIndicatorPill("Tipo", 'filter-type', map[typeFilter]);
+            }
+
+            lucide.createIcons();
+
+            // Filter Events array
+            const filtered = state.events.filter(ev => {
+                if (catFilter !== 'all' && ev.category !== catFilter) return false;
+                if (formatFilter !== 'all' && ev.format !== formatFilter) return false;
+                if (typeFilter !== 'all' && ev.type !== typeFilter) return false;
+                if (minDate && new Date(ev.dateValue) < new Date(minDate)) return false;
+                return true;
+            });
+
+            // Draw cards
+            const grid = document.getElementById('events-grid-container');
+            grid.innerHTML = '';
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center border border-dashed border-gray-800 rounded-2xl">
+                        <i data-lucide="info" class="mx-auto h-12 w-12 text-brand-muted mb-4"></i>
+                        <h3 class="text-lg font-bold text-white mb-1">Nenhum evento localizado</h3>
+                        <p class="text-sm text-brand-muted">Ajuste os filtros ou selecione outra data.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            filtered.forEach(ev => {
+                const isSubscribed = state.subscriptions.includes(ev.id);
+                const buttonHtml = isSubscribed
+                    ? `<button class="w-full bg-brand-card border border-brand-accent text-brand-accent font-bold py-2 px-4 rounded-xl text-xs transition cursor-default">Inscrito <i data-lucide="check" class="h-3.5 w-3.5 inline ml-1"></i></button>`
+                    : `<button onclick="subscribeToEvent(${ev.id})" class="w-full bg-brand-accent hover:bg-opacity-90 text-brand-dark font-extrabold py-2 px-4 rounded-xl text-xs transition">Inscrever-se agora</button>`;
+
+                const card = document.createElement('div');
+                card.className = "bg-brand-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-44 w-full overflow-hidden relative">
+                            <img src="${ev.img}" onerror="this.src='https://placehold.co/600x400/1b1d2a/ffffff?text=${encodeURIComponent(ev.title)}'" alt="${ev.title}" class="w-full h-full object-cover">
+                            <!-- Badges -->
+                            <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+                                <span class="bg-brand-purple text-[10px] font-bold px-2 py-0.5 rounded text-white">${ev.categoryLabel}</span>
+                                <span class="bg-[#00f0ff] text-brand-dark text-[10px] font-bold px-2 py-0.5 rounded">${ev.formatLabel}</span>
+                                <span class="bg-gray-800 text-white text-[10px] font-bold px-2 py-0.5 rounded">${ev.typeLabel}</span>
+                            </div>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-md font-bold text-white leading-snug line-clamp-2">${ev.title}</h3>
+                            <div class="space-y-1.5 text-xs text-brand-muted">
+                                <div class="flex items-center space-x-1.5">
+                                    <i data-lucide="calendar" class="h-3.5 w-3.5 text-brand-accent"></i>
+                                    <span>${ev.dateStr}</span>
+                                </div>
+                                <div class="flex items-center space-x-1.5">
+                                    <i data-lucide="map-pin" class="h-3.5 w-3.5 text-brand-accent"></i>
+                                    <span class="truncate">${ev.location}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0">
+                        ${buttonHtml}
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Reset single filter attribute
+        function resetSingleFilter(filterId) {
+            document.getElementById(filterId).value = 'all';
+            applyFilters();
+        }
+
+        // Clear all filters
+        function clearFilters() {
+            document.getElementById('filter-category').value = 'all';
+            document.getElementById('filter-format').value = 'all';
+            document.getElementById('filter-type').value = 'all';
+            document.getElementById('filter-date').value = '2026-01-01';
+            applyFilters();
+        }
+
+        // Render Speakers list (Page 3)
+        function renderSpeakers(filteredList = null) {
+            const list = filteredList || state.speakers;
+            const grid = document.getElementById('speakers-grid-container');
+            grid.innerHTML = '';
+
+            document.getElementById('speakers-count-label').innerText = `Mostrando ${list.length} perfis`;
+
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center border border-dashed border-gray-800 rounded-2xl">
+                        <i data-lucide="user-x" class="mx-auto h-12 w-12 text-brand-muted mb-4"></i>
+                        <h3 class="text-lg font-bold text-white mb-1">Nenhum palestrante localizado</h3>
+                        <p class="text-sm text-brand-muted">Tente utilizar outros termos de busca.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            list.forEach(sp => {
+                const card = document.createElement('div');
+                card.className = "bg-brand-card rounded-2xl p-6 border border-gray-800 text-center flex flex-col justify-between hover:border-gray-700 transition";
+                card.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="relative w-28 h-28 mx-auto rounded-full overflow-hidden border-2 border-brand-accent p-1">
+                            <img src="${sp.img}" onerror="this.src='https://placehold.co/200x200/1b1d2a/ffffff?text=${encodeURIComponent(sp.name)}'" alt="${sp.name}" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white leading-tight">${sp.name}</h3>
+                            <span class="text-xs text-brand-accent font-semibold block mt-1">${sp.area}</span>
+                        </div>
+                        <p class="text-xs text-brand-muted text-justify leading-relaxed line-clamp-4">
+                            ${sp.desc}
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800/50 mt-4 flex justify-between items-center text-[11px] text-brand-muted">
+                        <span class="flex items-center"><i data-lucide="check-square" class="h-3.5 w-3.5 text-brand-accent mr-1"></i> Eventos em 2026</span>
+                        <button onclick="showSpeakerToast('${sp.name}')" class="bg-brand-purple hover:bg-opacity-90 text-white font-bold px-3 py-1.5 rounded-lg text-xs transition">Ver perfil</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Action helper for Speaker Detail button
+        function showSpeakerToast(name) {
+            showToast(`Carregando portfólio completo de ${name}...`, 'success');
+        }
+
+        // Search Speakers Textual
+        function searchSpeakers() {
+            const query = document.getElementById('speaker-search-input').value.toLowerCase().trim();
+            if (!query) {
+                renderSpeakers();
+                return;
+            }
+            const filtered = state.speakers.filter(sp => {
+                return sp.name.toLowerCase().includes(query) || sp.area.toLowerCase().includes(query) || sp.desc.toLowerCase().includes(query);
+            });
+            renderSpeakers(filtered);
+        }
+
+        // Quick Category Filter for Speakers
+        function filterSpeakerByTag(tag) {
+            document.getElementById('speaker-search-input').value = tag;
+            searchSpeakers();
+        }
+
+        // Reset Speakers Input
+        function resetSpeakerSearch() {
+            document.getElementById('speaker-search-input').value = '';
+            renderSpeakers();
+        }
+
+        // Render Active Subscriptions (Page 4)
+        function renderSubscriptions() {
+            const container = document.getElementById('active-subscriptions-container');
+            container.innerHTML = '';
+
+            const subEvents = state.events.filter(ev => state.subscriptions.includes(ev.id));
+
+            // Sync Header Badges & Sidebar Info
+            document.getElementById('badge-inscritos-nav').innerText = subEvents.length;
+            if (subEvents.length > 0) {
+                document.getElementById('badge-inscritos-nav').classList.remove('hidden');
+            } else {
+                document.getElementById('badge-inscritos-nav').classList.add('hidden');
+            }
+
+            document.getElementById('badge-inscricoes-ativas').innerText = `${subEvents.length} inscrição(ões) ativa(s)`;
+            document.getElementById('my-stats-upcoming').innerText = subEvents.length;
+
+            if (subEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-12 text-center border border-dashed border-gray-800 rounded-2xl">
+                        <i data-lucide="calendar" class="mx-auto h-12 w-12 text-brand-muted mb-4"></i>
+                        <h3 class="text-md font-bold text-white mb-1">Nenhuma inscrição ativa</h3>
+                        <p class="text-xs text-brand-muted mb-4">Participe dos eventos mais inovadores da região.</p>
+                        <button onclick="navigateTo('eventos')" class="bg-brand-accent hover:bg-opacity-90 text-brand-dark font-extrabold px-6 py-2.5 rounded-xl text-xs transition">Pesquisar Eventos</button>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            subEvents.forEach(ev => {
+                const card = document.createElement('div');
+                card.className = "bg-brand-card rounded-2xl overflow-hidden border border-gray-800 flex flex-col justify-between hover:border-gray-700 transition";
+                card.innerHTML = `
+                    <div>
+                        <div class="h-44 w-full overflow-hidden relative">
+                            <img src="${ev.img}" onerror="this.src='https://placehold.co/600x400/1b1d2a/ffffff?text=${encodeURIComponent(ev.title)}'" alt="${ev.title}" class="w-full h-full object-cover">
+                            <!-- Badges -->
+                            <div class="absolute bottom-3 left-3 flex flex-wrap gap-1.5">
+                                <span class="bg-brand-purple text-[10px] font-bold px-2.5 py-0.5 rounded text-white">${ev.categoryLabel}</span>
+                                <span class="bg-[#00f0ff] text-brand-dark text-[10px] font-bold px-2.5 py-0.5 rounded flex items-center"><i data-lucide="radio" class="h-3 w-3 mr-1 animate-pulse"></i> ${ev.formatLabel}</span>
+                                <span class="bg-gray-800 text-white text-[10px] font-bold px-2.5 py-0.5 rounded">${ev.typeLabel}</span>
+                            </div>
+                        </div>
+                        <div class="p-5 space-y-3">
+                            <h3 class="text-md font-bold text-white leading-snug">${ev.title}</h3>
+                            <div class="space-y-1.5 text-xs text-brand-muted">
+                                <div class="flex items-center space-x-1.5">
+                                    <i data-lucide="calendar" class="h-3.5 w-3.5 text-brand-accent"></i>
+                                    <span>${ev.dateStr}</span>
+                                </div>
+                                <div class="flex items-center space-x-1.5">
+                                    <i data-lucide="map-pin" class="h-3.5 w-3.5 text-brand-accent"></i>
+                                    <span>${ev.location}</span>
+                                </div>
+                            </div>
+
+                            <!-- Countdown Card Area (Tela 5 Style) -->
+                            <div class="bg-[#11131e] p-4 rounded-xl border border-gray-800 flex items-center justify-between mt-3">
+                                <div>
+                                    <span class="text-[10px] text-brand-muted block uppercase font-bold tracking-wider">Começar em</span>
+                                    <span class="text-md font-extrabold text-brand-accent countdown-timer" data-date="${ev.dateValue}">Calculando...</span>
+                                </div>
+                                <i data-lucide="rocket" class="h-5 w-5 text-brand-accent"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 pt-0 flex gap-3">
+                        <button onclick="showToast('Link de transmissão gerado e pronto!', 'success')" class="flex-grow bg-[#11131e] hover:bg-brand-card border border-gray-800 text-white font-bold py-2.5 px-4 rounded-lg text-xs transition">
+                            Ver também
+                        </button>
+                        <button onclick="requestCancelSubscription(${ev.id})" class="border border-brand-danger hover:bg-brand-danger hover:bg-opacity-10 text-brand-danger font-bold py-2.5 px-4 rounded-lg text-xs transition">
+                            Cancelar
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Live Countdown Timer logic
+        function setupCountdownTimers() {
+            setInterval(() => {
+                const timers = document.querySelectorAll('.countdown-timer');
+                timers.forEach(timer => {
+                    const targetStr = timer.getAttribute('data-date');
+                    const targetDate = new Date(targetStr + "T00:00:00");
+                    const now = new Date();
+                    const diffTime = targetDate - now;
+
+                    if (diffTime <= 0) {
+                        timer.innerText = "Em andamento / Iniciado";
+                        return;
+                    }
+
+                    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                    const diffHours = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    
+                    timer.innerText = `${diffDays}d ${diffHours}h`;
+                });
+            }, 1000);
+        }
+
+        // Show cancellation modal dialog (Tela 3)
+        function requestCancelSubscription(eventId) {
+            const ev = state.events.find(x => x.id === eventId);
+            if (!ev) return;
+
+            state.pendingCancelId = eventId;
+            document.getElementById('cancel-event-title').innerText = ev.title;
+            openModal('cancel-confirm');
+        }
+
+        // Confirm Action of subscription delete
+        function confirmCancelSubscription() {
+            if (state.pendingCancelId === null) return;
+
+            const id = state.pendingCancelId;
+            state.subscriptions = state.subscriptions.filter(x => x !== id);
+
+            closeModal('cancel-confirm');
+            state.pendingCancelId = null;
+
+            showToast("Sua inscrição foi cancelada com sucesso.", "success");
+
+            // Refresh UI components
+            renderSubscriptions();
+            applyFilters();
+            updateUIState();
+        }
+
+        // Add subscription to Event
+        function subscribeToEvent(eventId) {
+            if (!state.currentUser.loggedIn) {
+                showToast("Por favor, acesse sua conta antes de continuar.", "info");
+                openModal('login');
+                return;
+            }
+
+            if (state.subscriptions.includes(eventId)) {
+                showToast("Você já possui inscrição ativa neste evento.", "info");
+                return;
+            }
+
+            state.subscriptions.push(eventId);
+            showToast("Inscrição efetuada com sucesso!", "success");
+
+            // Update views
+            applyFilters();
+            renderSubscriptions();
+            updateUIState();
+        }
+
+        // Auth: Create Account
+        function handleRegistration(event) {
+            event.preventDefault();
+            const name = document.getElementById('register-name').value;
+            const email = document.getElementById('register-email').value;
+
+            if (!name || !email) {
+                showToast("Complete todos os campos necessários.", "error");
+                return;
+            }
+
+            state.currentUser = {
+                loggedIn: true,
+                name: name
+            };
+
+            closeModal('register');
+            showToast(`Boas-vindas ao TechDFEvents, ${name}!`, "success");
+            updateUIState();
+        }
+
+        // Auth: Login flow
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+
+            state.currentUser = {
+                loggedIn: true,
+                name: "Lucas Ribeiro"
+            };
+
+            closeModal('login');
+            showToast("Conexão estabelecida com sucesso!", "success");
+            updateUIState();
+        }
+
+        // Auth: Logout
+        function logout() {
+            state.currentUser = {
+                loggedIn: false,
+                name: ""
+            };
+            state.subscriptions = []; // Reset simulation mock data
+            showToast("Desconectado de forma segura.", "success");
+            updateUIState();
+            applyFilters();
+            renderSubscriptions();
+        }
+
+        // Sync visual UI elements based on authentication
+        function updateUIState() {
+            const loggedInHeader = document.getElementById('logged-in-header');
+            const loggedOutHeader = document.getElementById('logged-out-header');
+
+            if (state.currentUser.loggedIn) {
+                loggedInHeader.classList.remove('hidden');
+                loggedOutHeader.classList.add('hidden');
+                document.getElementById('user-display-name').innerText = state.currentUser.name;
+            } else {
+                loggedInHeader.classList.add('hidden');
+                loggedOutHeader.classList.remove('hidden');
+            }
+
+            // Sync total confirmed events stat
+            document.getElementById('stats-eventos-count').innerText = `${state.events.length}+`;
+
+            // Setup correct active states initially
+            const subEvents = state.events.filter(ev => state.subscriptions.includes(ev.id));
+            document.getElementById('badge-inscritos-nav').innerText = subEvents.length;
+            if (subEvents.length > 0) {
+                document.getElementById('badge-inscritos-nav').classList.remove('hidden');
+            } else {
+                document.getElementById('badge-inscritos-nav').classList.add('hidden');
+            }
+        }
+
+        // Generate Certificate Simulation (Saves HTML5 simulation or downloads mock text file)
+        function generateCertificate(user, eventName) {
+            document.getElementById('cert-user-name').innerText = state.currentUser.loggedIn ? state.currentUser.name : user;
+            document.getElementById('cert-event-title').innerText = eventName;
+            openModal('certificate');
+        }
+
+        // Toast Helper
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            
+            let bgClass = 'bg-brand-card border-gray-800';
+            let icon = 'info';
+            
+            if (type === 'success') {
+                bgClass = 'bg-brand-card border-emerald-500/50 text-emerald-400';
+                icon = 'check-circle';
+            } else if (type === 'error') {
+                bgClass = 'bg-brand-card border-brand-danger/50 text-brand-danger';
+                icon = 'alert-triangle';
+            }
+
+            toast.className = `flex items-center p-4 rounded-xl border ${bgClass} shadow-xl transition-all duration-300 transform translate-y-2 opacity-0 max-w-sm`;
+            toast.innerHTML = `
+                <i data-lucide="${icon}" class="h-5 w-5 mr-3 flex-shrink-0"></i>
+                <div class="text-xs font-semibold text-white mr-4">${message}</div>
+                <button onclick="this.parentElement.remove()" class="text-brand-muted hover:text-white ml-auto">
+                    <i data-lucide="x" class="h-3.5 w-3.5"></i>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            // Animate In
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            // Auto Close after 4s
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        // Modal Utility helpers
+        function openModal(modalId) {
+            document.getElementById(`modal-${modalId}`).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(`modal-${modalId}`).classList.add('hidden');
+        }
+
+        function toggleAuthModal() {
+            const isRegOpen = !document.getElementById('modal-register').classList.contains('hidden');
+            if (isRegOpen) {
+                closeModal('register');
+                openModal('login');
+            } else {
+                closeModal('login');
+                openModal('register');
+            }
+        }
+    </script>
+</body>
+</html>
