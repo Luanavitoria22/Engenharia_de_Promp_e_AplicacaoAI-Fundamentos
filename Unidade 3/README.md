@@ -5,8 +5,8 @@ O projeto tem como objetivo desenvolver um protótipo funcional utilizando
 abordagens Low Code/No Code/Vibecode, explorando ferramentas capazes de
 acelerar o desenvolvimento de aplicações sem exigir programação tradicional em larga
 escala.
-A proposta escolhida pela dupla foi a criação de uma plataforma web de descoberta e gerenciamento de eventos tech.  
-A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, que centraliza como conferências, workshops, hackathons e meetups em um único lugar — com foco em descoberta, inscrição e acompanhamento de participação.
+
+A proposta escolhida pela dupla foi a criação de uma plataforma web de descoberta e gerenciamento de eventos tech.A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, que centraliza como conferências, workshops, hackathons e meetups em um único lugar — com foco em descoberta, inscrição e acompanhamento de participação.
 
 
 ---
@@ -16,8 +16,7 @@ A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, qu
 - Prints das telas ou link para a aplicação criada.
   https://luuhvitoria2018.bubbleapps.io/version-test
 
-- Breve explicação de como o protótipo funciona.
-Protótipo desenvolvido permite:
+- Protótipo desenvolvido permite:
 
 • Visualização detalhada do certificado (nome, evento...)
 • 
@@ -31,11 +30,11 @@ Protótipo desenvolvido permite:
 
 - Bubble
 
-- Justificativa da escolha:
+**Justificativa da escolha:**
   
 A plataforma foi escolhida por oferecer:
 
-• Desenvolvimento rápido de prototipos(5 min. no maximo);
+• Desenvolvimento rápido de prototipos (5 min. no maximo);
 • Criação sem código;
 • Integração com APIs;
 • Workflows automatizados;
