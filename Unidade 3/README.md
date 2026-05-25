@@ -83,6 +83,9 @@ A utilização do Bubble demonstrou que plataformas no-code podem acelerar signi
 
 Descreva como o grupo organizou as tarefas e responsabilidades entre os integrantes.
 
+Criação do prompt de inicio para a criação do prototipo inicial
+Organização do repositorio e relatórios
+
 ---
 
 ## 📝 Registro da Aula
