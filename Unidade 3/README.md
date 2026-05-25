@@ -18,11 +18,11 @@ A proposta escolhida pela dupla foi a criação de uma plataforma web de descobe
 
 - Protótipo desenvolvido permite:
 
-• Fazer login e armazenar informações dos usuários;
-• Filtrar categorias e formato dos eventos(online/presencial);
-• Baixar cetificados;
-• Calendário interativo — clicar em uma data para ver os eventos do dia e se inscrever diretamente;
-• Palestrantes - cartões com bio, especialidade e eventos associados;
+- Fazer login e armazenar informações dos usuários;
+- Filtrar categorias e formato dos eventos(online/presencial);
+- Baixar cetificados;
+- Calendário interativo — clicar em uma data para ver os eventos do dia e se inscrever diretamente;
+- Palestrantes - cartões com bio, especialidade e eventos associados;
 
 > Coloque os arquivos de imagem ou PDF na pasta `/docs`.
 
@@ -36,10 +36,10 @@ A proposta escolhida pela dupla foi a criação de uma plataforma web de descobe
   
 A plataforma foi escolhida por oferecer:
 
-• Desenvolvimento rápido de prototipos (5 min. no maximo);
-• Criação sem código;
-• Integração com APIs;
-• Workflows automatizados;
+- Desenvolvimento rápido de prototipos (5 min. no maximo);
+- Criação sem código;
+- Integração com APIs;
+- Workflows automatizados;
 
 ---
 
@@ -116,15 +116,15 @@ Professor(a): Kadidja Valéria
 
 **Melhorias sugeridas**
 
-• Implementação de autenticação de usuários e certificados;
-• Melhorar design responsivo;
-• Banco de dados mais solido;
+- Implementação de autenticação de usuários e certificados;
+- Melhorar design responsivo;
+- Banco de dados mais solido;
 
 **Evoluções Futuras**
   
-• Integração com inteligencia artificial;
-• Expansão para aplicativo mobile;
-• Login com GitHub; 
-• Replay de palestras online;
+- Integração com inteligencia artificial;
+- Expansão para aplicativo mobile;
+- Login com GitHub; 
+- Replay de palestras online;
 
 Solução: 
