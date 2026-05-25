@@ -128,3 +128,6 @@ Professor(a): Kadidja Valéria
 - Replay de palestras online;
 
 Solução: https://gemini.google.com/share/56dde6232b24
+
+Participantes: Luana Vitória Da Silva Pereira 
+               Paola Victoria Matos Mota
