@@ -6,7 +6,7 @@ abordagens Low Code/No Code/Vibecode, explorando ferramentas capazes de
 acelerar o desenvolvimento de aplicações sem exigir programação tradicional em larga
 escala.
 
-A proposta escolhida pela dupla foi a criação de uma plataforma web de descoberta e gerenciamento de eventos tech.A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, que centraliza como conferências, workshops, hackathons e meetups em um único lugar — com foco em descoberta, inscrição e acompanhamento de participação.
+A proposta escolhida pela dupla foi a criação de uma plataforma web de descoberta e gerenciamento de eventos tech. A TechDF Events é uma aplicação externa à comunidade tech de Brasilia/DF, que centraliza como conferências, workshops, hackathons e meetups em um único lugar — com foco em descoberta, inscrição e acompanhamento de participação.
 
 
 ---
@@ -18,10 +18,12 @@ A proposta escolhida pela dupla foi a criação de uma plataforma web de descobe
 
 - Protótipo desenvolvido permite:
 
-• Visualização detalhada do certificado (nome, evento...)
-• 
-• 
-• 
+• Fazer login e armazenar informações dos usuários;
+• Filtrar categorias e formato dos eventos(online/presencial);
+• Baixar cetificados;
+• Calendário interativo — clicar em uma data para ver os eventos do dia e se inscrever diretamente;
+• Palestrantes - cartões com bio, especialidade e eventos associados;
+
 > Coloque os arquivos de imagem ou PDF na pasta `/docs`.
 
 ---
@@ -78,7 +80,7 @@ Mesmo diante das limitações encontradas, conseguimos desenvolver um protótipo
    - Foco nas funcionalidades essenciais do protótipo;
 2. Uso de APIs externas para complementar funcionalidades.
 3. Aprendizado colaborativo.
-   - Divisão das tarefas, pesquisas em videos e documentações;
+   - Divisão das tarefas, pesquisas em documentações e videos;
    - Testes para identificar erros rapidamente.
 
 A utilização do Bubble demonstrou que plataformas no-code podem acelerar significativamente o desenvolvimento de aplicações, principalmente em projetos de prototipagem e validação de ideias.
@@ -87,7 +89,7 @@ A utilização do Bubble demonstrou que plataformas no-code podem acelerar signi
 
 ## 👥 Colaboração
 
-Descreva como o grupo organizou as tarefas e responsabilidades entre os integrantes.
+A divisão das tarefas de seu da seguinte forma: 
 
 • Criação do prompt de inicio para a criação do prototipo inicial;
 **• Modelagem do fluxo:** Definições das automações e funcionalidades;
@@ -112,11 +114,17 @@ Professor(a): Kadidja Valéria
 
 ## 🚀 Próximos Passos
 
-- Melhorias sugeridas para o protótipo.
+**Melhorias sugeridas**
 
-- Possíveis evoluções para o Projeto Final da Unidade 3.
+• Implementação de autenticação de usuários e certificados;
+• Melhorar design responsivo;
+• Banco de dados mais solido;
+
+**Evoluções Futuras**
   
 • Integração com inteligencia artificial;
 • Expansão para aplicativo mobile;
 • Login com GitHub; 
+• Replay de palestras online;
 
+Solução: 
