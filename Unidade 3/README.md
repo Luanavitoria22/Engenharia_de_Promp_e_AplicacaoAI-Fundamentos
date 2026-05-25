@@ -13,10 +13,10 @@ A proposta escolhida pela dupla foi a criação de uma plataforma web de descobe
 
 ## 🖥️ Protótipo
 
-- Prints das telas ou link para a aplicação criada.
+## Link para a aplicação criada:
   https://luuhvitoria2018.bubbleapps.io/version-test
 
-- Protótipo desenvolvido permite:
+## Protótipo desenvolvido permite:
 
 - Fazer login e armazenar informações dos usuários;
 - Filtrar categorias e formato dos eventos(online/presencial);
@@ -34,7 +34,7 @@ A proposta escolhida pela dupla foi a criação de uma plataforma web de descobe
 
 **Justificativa da escolha:**
   
-A plataforma foi escolhida por oferecer:
+## A plataforma foi escolhida por oferecer:
 
 - Desenvolvimento rápido de prototipos (5 min. no maximo);
 - Criação sem código;
@@ -89,11 +89,11 @@ A utilização do Bubble demonstrou que plataformas no-code podem acelerar signi
 
 ## 👥 Colaboração
 
-A divisão das tarefas de seu da seguinte forma: 
+**A divisão das tarefas foi realizada de forma:**
 
-• Criação do prompt de inicio para a criação do prototipo inicial;
-**• Modelagem do fluxo:** Definições das automações e funcionalidades;
-**• Documentação:** Organização do repositório e relatórios;
+- Criação do prompt de inicio para a criação do prototipo inicial;
+**- Modelagem do fluxo:** Definições das automações e funcionalidades;
+**- Documentação:** Organização do repositório e relatórios;
 
 
 A colaboração ocorreu nas aulas e pelo compartilhamento do repositório no GitHub. 
